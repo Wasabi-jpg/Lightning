@@ -1,5 +1,5 @@
-int startX = 70;
-int startY  = 250;
+int startX = mouseX+70;
+int startY  = mouseY+20;
 int endX = 70;
 int endY = 250;
 PImage img;
@@ -14,7 +14,7 @@ void setup()
 void draw()
 {
 	rectFade();
-	image(img, 0, 230, 70,70);
+	image(img, mouseX, mouseY, 70,70);
 stroke(255,0,0);
 while(endX < 500){
  endX = startX + (int)(Math.random()*10);
@@ -27,15 +27,15 @@ while(endX < 500){
 void mousePressed()
 {
 
-startX = 70;
-startY = 250;
+startX = mouseX+70;
+startY = mouseY+20;
 endX = 70;
 endY = 250;
 }
 
 
 void rectFade(){
-	fill(0,0,0,5);
+	fill(0,0,0,15);
 	stroke(0,0,0,5);
 	rect(0,0,500,500);
 }
